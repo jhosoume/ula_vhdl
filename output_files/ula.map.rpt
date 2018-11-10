@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ula
-Thu Nov  8 08:52:05 2018
+Sat Nov 10 01:10:08 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,11 +13,12 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |ula
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |ula
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -43,13 +44,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov  8 08:52:05 2018           ;
+; Analysis & Synthesis Status        ; Successful - Sat Nov 10 01:10:08 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; ula                                             ;
 ; Top-level Entity Name              ; ula                                             ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 244                                             ;
-;     Total combinational functions  ; 244                                             ;
+; Total logic elements               ; 893                                             ;
+;     Total combinational functions  ; 893                                             ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
 ; Total pins                         ; 102                                             ;
@@ -65,7 +66,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                     ; EP2C35F672C7       ;                    ;
+; Device                                                                     ; EP2C70F896C6       ;                    ;
 ; Top-level entity name                                                      ; ula                ; ula                ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
@@ -165,34 +166,34 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+-----------------+------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 244       ;
-;                                             ;           ;
-; Total combinational functions               ; 244       ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 113       ;
-;     -- 3 input functions                    ; 66        ;
-;     -- <=2 input functions                  ; 65        ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 182       ;
-;     -- arithmetic mode                      ; 62        ;
-;                                             ;           ;
-; Total registers                             ; 0         ;
-;     -- Dedicated logic registers            ; 0         ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 102       ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-; Maximum fan-out node                        ; opcode[1] ;
-; Maximum fan-out                             ; 38        ;
-; Total fan-out                               ; 813       ;
-; Average fan-out                             ; 2.35      ;
-+---------------------------------------------+-----------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 893   ;
+;                                             ;       ;
+; Total combinational functions               ; 893   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 484   ;
+;     -- 3 input functions                    ; 319   ;
+;     -- <=2 input functions                  ; 90    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 798   ;
+;     -- arithmetic mode                      ; 95    ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 102   ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; B[1]  ;
+; Maximum fan-out                             ; 93    ;
+; Total fan-out                               ; 3107  ;
+; Average fan-out                             ; 3.12  ;
++---------------------------------------------+-------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -200,9 +201,53 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |ula                       ; 244 (244)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 102  ; 0            ; |ula                ; work         ;
+; |ula                       ; 893 (893)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 102  ; 0            ; |ula                ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; Z_33bit[0]                                          ; Mux34               ; yes                    ;
+; Z_33bit[32]                                         ; Mux34               ; yes                    ;
+; Z_33bit[31]                                         ; Mux34               ; yes                    ;
+; Z_33bit[1]                                          ; Mux34               ; yes                    ;
+; Z_33bit[2]                                          ; Mux34               ; yes                    ;
+; Z_33bit[3]                                          ; Mux34               ; yes                    ;
+; Z_33bit[4]                                          ; Mux34               ; yes                    ;
+; Z_33bit[5]                                          ; Mux34               ; yes                    ;
+; Z_33bit[6]                                          ; Mux34               ; yes                    ;
+; Z_33bit[7]                                          ; Mux34               ; yes                    ;
+; Z_33bit[8]                                          ; Mux34               ; yes                    ;
+; Z_33bit[9]                                          ; Mux34               ; yes                    ;
+; Z_33bit[10]                                         ; Mux34               ; yes                    ;
+; Z_33bit[11]                                         ; Mux34               ; yes                    ;
+; Z_33bit[12]                                         ; Mux34               ; yes                    ;
+; Z_33bit[13]                                         ; Mux34               ; yes                    ;
+; Z_33bit[14]                                         ; Mux34               ; yes                    ;
+; Z_33bit[15]                                         ; Mux34               ; yes                    ;
+; Z_33bit[16]                                         ; Mux34               ; yes                    ;
+; Z_33bit[17]                                         ; Mux34               ; yes                    ;
+; Z_33bit[18]                                         ; Mux34               ; yes                    ;
+; Z_33bit[19]                                         ; Mux34               ; yes                    ;
+; Z_33bit[20]                                         ; Mux34               ; yes                    ;
+; Z_33bit[21]                                         ; Mux34               ; yes                    ;
+; Z_33bit[22]                                         ; Mux34               ; yes                    ;
+; Z_33bit[23]                                         ; Mux34               ; yes                    ;
+; Z_33bit[24]                                         ; Mux34               ; yes                    ;
+; Z_33bit[25]                                         ; Mux34               ; yes                    ;
+; Z_33bit[26]                                         ; Mux34               ; yes                    ;
+; Z_33bit[27]                                         ; Mux34               ; yes                    ;
+; Z_33bit[28]                                         ; Mux34               ; yes                    ;
+; Z_33bit[29]                                         ; Mux34               ; yes                    ;
+; Z_33bit[30]                                         ; Mux34               ; yes                    ;
+; ovfl$latch                                          ; Mux67               ; yes                    ;
+; Number of user-specified and inferred latches = 34  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -225,7 +270,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 16:1               ; 30 bits   ; 300 LEs       ; 120 LEs              ; 180 LEs                ; No         ; |ula|Mux30                 ;
+; 1:1                ; 33 bits   ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |ula|Mux42                 ;
+; 25:1               ; 7 bits    ; 112 LEs       ; 70 LEs               ; 42 LEs                 ; No         ; |ula|Mux11                 ;
+; 24:1               ; 7 bits    ; 112 LEs       ; 77 LEs               ; 35 LEs                 ; No         ; |ula|Mux22                 ;
+; 26:1               ; 4 bits    ; 68 LEs        ; 48 LEs               ; 20 LEs                 ; No         ; |ula|Mux6                  ;
+; 25:1               ; 4 bits    ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; No         ; |ula|Mux26                 ;
+; 27:1               ; 2 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; No         ; |ula|Mux4                  ;
+; 26:1               ; 2 bits    ; 34 LEs        ; 24 LEs               ; 10 LEs                 ; No         ; |ula|Mux31                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
@@ -244,7 +295,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -254,29 +305,64 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Nov  8 08:52:02 2018
+    Info: Processing started: Sat Nov 10 01:10:03 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ula -c ula
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file ula.vhd
     Info (12022): Found design unit 1: ula-behavioral
     Info (12023): Found entity 1: ula
+Info (12021): Found 2 design units, including 1 entities, in source file ula_tb.vhd
+    Info (12022): Found design unit 1: ula_tb-ula_arch
+    Info (12023): Found entity 1: ula_tb
 Info (12127): Elaborating entity "ula" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at ula.vhd(19): used implicit default value for signal "ovfl" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at ula.vhd(27): object "A_extended" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at ula.vhd(28): object "B_extended" assigned a value but never read
-Warning (10492): VHDL Process Statement warning at ula.vhd(39): signal "a32" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "ovfl" is stuck at GND
+Warning (10631): VHDL Process Statement warning at ula.vhd(38): inferring latch(es) for signal or variable "ovfl", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ula.vhd(38): inferring latch(es) for signal or variable "Z_33bit", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "Z_33bit[0]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[1]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[2]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[3]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[4]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[5]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[6]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[7]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[8]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[9]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[10]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[11]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[12]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[13]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[14]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[15]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[16]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[17]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[18]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[19]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[20]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[21]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[22]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[23]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[24]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[25]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[26]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[27]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[28]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[29]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[30]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[31]" at ula.vhd(38)
+Info (10041): Inferred latch for "Z_33bit[32]" at ula.vhd(38)
+Info (10041): Inferred latch for "ovfl" at ula.vhd(38)
+Warning (13012): Latch ovfl$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal opcode[0]
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 346 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 995 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 68 input pins
     Info (21059): Implemented 34 output pins
-    Info (21061): Implemented 244 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 642 megabytes
-    Info: Processing ended: Thu Nov  8 08:52:05 2018
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info (21061): Implemented 893 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 640 megabytes
+    Info: Processing ended: Sat Nov 10 01:10:08 2018
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 

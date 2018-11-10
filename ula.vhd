@@ -35,7 +35,13 @@ begin
 	B_33bit <= B(31) & B;
   
 	-- lista de sensitividade, se um desses sinais altera, a saida pode ser alterada
-	proc_ula: process (A, B, opcode, tmp, a32, Z_33bit, A_33bit, B_33bit) begin
+	proc_ula: process (A, B, opcode, tmp, a32, Z_33bit, A_33bit, B_33bit) is 
+	
+	variable count : integer;
+	
+	begin
+	count := 0;
+	
 	if (a32 = X"00000000") then zero <= '1'; else zero <= '0'; end if; 
 		case opcode is
 			when "0000" => 																								-- AND
@@ -113,6 +119,28 @@ begin
 				a32 <= std_logic_vector(shift_right(signed(A), to_integer(unsigned(B))));	
 				ovfl <= '0';
 				
+			when "1101" => 																								-- CLZ A (quantidade de zeros consecutivos mais significativos)
+				ovfl <= '0'; 
+				for indx in 31 downto 0 loop
+					if A(indx) = '1' then
+						exit;
+					else
+						count := count + 1;
+					end if;
+				end loop;
+				a32 <= std_logic_vector(to_unsigned(count, a32'length));
+				
+			when "1110" => 																								-- CLZ A (quantidade de zeros consecutivos mais significativos)
+				ovfl <= '0'; 
+				for indx in 31 downto 0 loop
+					if A(indx) = '0' then
+						exit;
+					else
+						count := count + 1;
+					end if;
+				end loop;
+				a32 <= std_logic_vector(to_unsigned(count, a32'length));
+							
 			when others => 
 				a32 <= (others => '0');
 				ovfl <= '0';

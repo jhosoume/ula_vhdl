@@ -4,7 +4,7 @@ K3
 cModel Technology
 Z0 d/home/jhosoume/unb/oac/ula/simulation/modelsim
 Eula
-Z1 w1541674312
+Z1 w1541870624
 Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
@@ -16,7 +16,7 @@ L13
 V<[SLo6NAg`<c]UlG5Pff?0
 Z8 OV;C;10.1d;51
 31
-Z9 !s108 1541676742.921291
+Z9 !s108 1541876900.200632
 Z10 !s90 -reportprogress|300|-93|-work|work|/home/jhosoume/unb/oac/ula/ula.vhd|
 Z11 !s107 /home/jhosoume/unb/oac/ula/ula.vhd|
 Z12 o-93 -work work -O0
@@ -30,7 +30,7 @@ R4
 DEx4 work 3 ula 0 22 <[SLo6NAg`<c]UlG5Pff?0
 l31
 L23
-VH_]7a6mWWzFAAAZCz19z@1
+ViQLbRTiKTIl`T?ik`mgF^1
 R8
 31
 R9
@@ -38,10 +38,10 @@ R10
 R11
 R12
 R13
-!s100 6CDSK1cSY6f_5UX@;`zlC2
+!s100 ?8Pd9jh@]0[fh>Llj=T8k3
 !i10b 1
 Eula_tb
-Z14 w1541676691
+Z14 w1541876820
 R3
 R4
 R5
@@ -54,7 +54,7 @@ VQaK@Ce9h^UdUEWno>QkS]1
 R8
 31
 !i10b 1
-Z17 !s108 1541676742.947890
+Z17 !s108 1541876900.229314
 Z18 !s90 -reportprogress|300|-93|-work|work|/home/jhosoume/unb/oac/ula/ula_tb.vhd|
 Z19 !s107 /home/jhosoume/unb/oac/ula/ula_tb.vhd|
 R12
@@ -63,10 +63,10 @@ Aula_arch
 R3
 R4
 DEx4 work 6 ula_tb 0 22 QaK@Ce9h^UdUEWno>QkS]1
-l27
+l26
 L6
-VNg[Cl2H_ziNQQa?zAdgdF1
-!s100 og3a0c5XET0doNcEC4bX@3
+V@QPzjfcKgIK4D4I?S@k>^2
+!s100 hLLId:dlUW6R?]3;nO<go2
 R8
 31
 !i10b 1

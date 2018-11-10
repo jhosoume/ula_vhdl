@@ -17,7 +17,6 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity ula
 # -- Compiling architecture behavioral of ula
-# ** Warning: /home/jhosoume/unb/oac/ula/ula.vhd(45): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
 # 
 # vcom -93 -work work {/home/jhosoume/unb/oac/ula/ula_tb.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
@@ -35,8 +34,6 @@
 # Loading work.ula_tb(ula_arch)
 # Loading ieee.numeric_std(body)
 # Loading work.ula(behavioral)
-# ** Warning: (vsim-8683) Uninitialized out port /ula_tb/i1/ovfl has no driver.
-# This port will contribute value (U) to the signal network.
 # 
 # add wave *
 # view structure
